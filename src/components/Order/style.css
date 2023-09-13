@@ -1,0 +1,40 @@
+.order-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order {
+  width: 100%;
+  margin-right: 30px;
+}
+
+.order:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.order__img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 20px;
+}
+
+.order__price {
+  color: #666;
+}
+
+.order__delete-icon {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  top: -10px;
+  color: red;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.order__delete-icon:hover {
+  transform: scale(1.2);
+}

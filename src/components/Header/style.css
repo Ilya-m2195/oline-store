@@ -1,0 +1,113 @@
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.nav {
+  float: right;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav li {
+  align-items: center;
+  display: inline;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.nav li:hover {
+  opacity: 0.5;
+}
+
+.nav li:not(:last-child) {
+  margin-right: 25px;
+}
+
+.presentation {
+  margin: 60px 0;
+  position: relative;
+  background: url('../../img/logo.jpg');
+  width: 100%;
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  background-color: #00000059;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px 2px rgba(161, 179, 193, 0.2);
+}
+
+.presentation::after {
+  content: 'Лучшие товары вашего для дома';
+  position: absolute;
+  width: 300px;
+  top: 50px;
+  left: 50px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.presentation::before {
+  content: 'по самым выгодным ценам';
+  position: absolute;
+  width: 300px;
+  top: 200px;
+  left: 50px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.basket-btn {
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.basket-icon {
+  width: 25px;
+  height: 25px;
+  transition: color, transform .2s ease;
+}
+
+.basket-icon:hover,
+.basket-icon.active {
+  color: #ab46bc;
+  transform: scale(1.2);
+}
+
+.open-basket {
+  padding: 20px;
+  position: absolute;
+  top: 89px;
+  right: 0;
+  width: 400px;
+  z-index: 10;
+  background: #e7e2e2;
+  box-shadow: 2px 2px 8px 2px rgba(161, 179, 193, 0.3);
+}
+
+.order-summa {
+font-weight: 400;
+font-size: 18px;
+text-decoration-line: underline;
+}
+
+.basket-empty__massage {
+  font-weight: 700;
+  font-size: 16px;
+}
+
