@@ -1,0 +1,23 @@
+.categories__list {
+  display: flex;
+  margin-bottom: 30px;
+  list-style: none;
+}
+
+.categories__item {
+  background: #fafafa;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.categories__item:hover {
+  border-color: #aba6a6;
+  transform: scale(1.08);
+}
+
+.categories__item:not(:last-child) {
+  margin-right: 15px;
+}

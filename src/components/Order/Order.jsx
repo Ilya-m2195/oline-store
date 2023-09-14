@@ -12,7 +12,7 @@ export const Order = ({ item, deleteOrder }) => {
 
       </div>
       <>
-        <TiTrash className="order__delete-icon" onClick={() => deleteOrder(item.id)}/>
+        <TiTrash className="order__delete-icon" onClick={() => deleteOrder(item)}/>
       </>
     </div>
   )

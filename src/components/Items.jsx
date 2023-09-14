@@ -8,9 +8,12 @@ class Items extends Component {
         {this.props.items.map(el => {
           return (
             <Item
-              item={el}
               key={el.id}
-              addToOrder={this.props.addToOrder} />
+              item={el}
+              deleteOrder={this.props.deleteOrder}
+              addToOrder={this.props.addToOrder}
+              onShowItem={this.props.onShowItem}
+            />
           )
         })}
       </main>
