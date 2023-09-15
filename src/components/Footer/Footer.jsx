@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css';
 
-export default function Footer() {
+export const Footer = () => {
   return (
-    <footer>
-      Все права защищены &copy;
-    </footer>
+    <footer className='footer'>
+    Все права защищены &copy;
+  </footer>
   )
 }
+

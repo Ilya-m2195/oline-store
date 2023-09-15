@@ -49,9 +49,11 @@
 }
 
 .item__price {
-  margin-bottom: 20px;
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
   font-weight: 700;
-  color: rgba(29, 248, 26, 0.778);
+  color: rgba(9, 203, 6, 0.882);
 }
 
 .item__button {
@@ -70,37 +72,27 @@
 }
 
 .item__button_selected {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  font-size: 15px;
-  font-weight: 700;
   border: 2px solid #3c8d57;
   background: #46bc5f;
-  border-radius: 5px;
-  padding: 6px 10px;
-  color: #fff;
+  cursor: auto;
   opacity: 0.5;
-  transition: .2s ease;
 }
 
 .item__button-delete {
-  position: absolute;
+
   right: 75px;
-  bottom: 20px;
-  font-size: 15px;
-  font-weight: 700;
+
   border: 2px solid #b90000;
   background: #f31a1a;
-  border-radius: 5px;
-  padding: 6px 10px;
-  color: #fff;
-  cursor: pointer;
   transition: .2s ease;
 }
 
-.item__button,.item__button-delete:hover {
+.item__button_add:hover {
   transform: scale(1.1);
+  background: #d823f89c;
 }
 
-
+.item__button-delete:hover {
+  transform: scale(1.1);
+  background: #f31a1a88;
+}

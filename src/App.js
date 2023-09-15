@@ -1,16 +1,15 @@
 import React from "react";
-import Header from "./components/Header/Header";
-import Items from "./components/Items";
+import { Header } from "./components/Header/Header";
+import { Items } from "./components/Items";
+import { Footer } from "./components/Footer/Footer";
+import { ShowFullItem } from "./components/ShowFullItem/ShowFullItem";
 import chair from "./img/chair-white.jpg";
 import table from "./img/table.jpeg";
 import bad from "./img/bad.jpeg";
 import closet from "./img/closet.jpg";
 import sofa from "./img/sofa.jpeg";
 import nightstand from "./img/nightstand.jpg";
-import Footer from "./components/Footer/Footer";
 import Categories from "./components/Categories/Categories";
-import { ShowFullItem } from "./components/ShowFullItem/ShowFullItem";
-
 
 class App extends React.Component {
   constructor(props) {

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { FaShoppingCart } from "react-icons/fa";
-
-import './style.css';
 import { Order } from '../Order/Order';
+import './style.css';
 
-export default function Header(props) {
+export const Header = (props) => {
   const [basketActive, setBasketActive] = useState(false);
   let summa = 0;
   props.orders.forEach(el => summa += Number(el.price));
@@ -12,8 +11,8 @@ export default function Header(props) {
   return (
     <>
       <header>
-        <div>
-          <span className='logo'>House staff</span>
+        <div className='logo'>
+          <a href='#'>House staff</a>
         </div>
         <ul className='nav'>
           <li>
@@ -31,6 +30,9 @@ export default function Header(props) {
                 className={!basketActive ? 'basket-icon' : 'basket-icon active'} /></button>
           </li>
         </ul>
+
+      </header>
+      <div className='presentation'>
         {basketActive && (
           <div className='open-basket'>
             {props.orders.length
@@ -42,12 +44,12 @@ export default function Header(props) {
               )
               : <p className='basket-empty__massage'>Корзина пуста</p>
             }
-            {props.orders.length > 0 &&
-              (<p className='order-summa'> Сумма: {summa.toFixed(2)}$</p>)}
+            {props.orders.length > 0 && (
+              <p className='order-summa'> Сумма: {summa.toFixed(2)}$</p>
+            )}
           </div>
         )}
-      </header>
-      <div className='presentation'></div>
+      </div>
     </>
-  )
+  );
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './styles.css';
 
 export default class Categories extends Component {
@@ -39,10 +39,10 @@ export default class Categories extends Component {
         {this.state.categories.map(el => {
           return (
               <li key={el.key} className='categories__item' onClick={() => this.props.chooseCategory(el.key)}>{el.name}</li>
-          )
+          );
         })}
       </ul>
-    )
+    );
   }
 }
 

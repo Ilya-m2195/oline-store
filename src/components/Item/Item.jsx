@@ -1,8 +1,7 @@
 import React from 'react';
 import './style.css';
-import { TiTrash } from 'react-icons/ti';
 
-export default function Item({ item, addToOrder, onShowItem, deleteOrder }) {
+export const Item = ({ item, addToOrder, onShowItem, deleteOrder }) => {
   return (
     <div className='item'>
       <img className='item__img' src={item.img} alt={item.title} onClick={() => onShowItem(item)} />
@@ -13,16 +12,15 @@ export default function Item({ item, addToOrder, onShowItem, deleteOrder }) {
         <p className='item__price'>{item.price}$</p>
       </div>
       {!item.selected ?
-        <button className='item__button' onClick={() => addToOrder(item)}>+</button> :
-        <button className='item__button_selected' disabled>&#10004;</button>
+        <button className='item__button item__button_add' onClick={() => addToOrder(item)}>+</button>
+        :
+        <button className='item__button item__button_selected' disabled>&#10004;</button>
       }
-
       {
         item.selected && (
-          <button className='item__button-delete' onClick={() => deleteOrder(item)}>&#10008;</button>
-
+          <button className='item__button item__button-delete' onClick={() => deleteOrder(item)}>&#10008;</button>
         )
       }
     </div>
-  )
+  );
 }

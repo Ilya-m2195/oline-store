@@ -19,6 +19,11 @@
   height: 80px;
   float: left;
   margin-right: 20px;
+  border-radius: 5px;
+}
+
+.order__title {
+  margin-bottom: 10px;
 }
 
 .order__price {
