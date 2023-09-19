@@ -8,7 +8,7 @@ export default class Categories extends Component {
       categories: [
         {
           key: 'all',
-          name: 'все'
+          name: 'Все'
         },
         {
           key: 'chairs',

@@ -28,7 +28,8 @@ class App extends React.Component {
           category: 'стулья',
           categoryKey: 'chairs',
           price: '49.99',
-          selected: false
+          selected: false,
+          count: 0
         },
         {
           id: 2,
@@ -38,7 +39,8 @@ class App extends React.Component {
           category: 'столы',
           categoryKey: 'tables',
           price: '99.99',
-          selected: false
+          selected: false,
+          count: 0
         },
         {
           id: 3,
@@ -48,7 +50,8 @@ class App extends React.Component {
           category: 'кровати',
           categoryKey: 'beds',
           price: '109.99',
-          selected: false
+          selected: false,
+          count: 0
         },
         {
           id: 4,
@@ -58,7 +61,8 @@ class App extends React.Component {
           category: 'мебель для хранения',
           categoryKey: 'cabinets',
           price: '169.99',
-          selected: false
+          selected: false,
+          count: 0
         },
         {
           id: 5,
@@ -68,7 +72,8 @@ class App extends React.Component {
           category: 'диваны',
           categoryKey: 'sofas',
           price: '100',
-          selected: false
+          selected: false,
+          count: 0
         },
         {
           id: 6,
@@ -78,7 +83,8 @@ class App extends React.Component {
           category: 'мебель для хранения',
           categoryKey: 'cabinets',
           price: '50.99',
-          selected: false
+          selected: false,
+          count: 0
         },
       ]
     }
@@ -87,12 +93,19 @@ class App extends React.Component {
     this.deleteOrder = this.deleteOrder.bind(this);
     this.chooseCategory = this.chooseCategory.bind(this);
     this.onShowItem = this.onShowItem.bind(this);
+    this.incrementItem = this.incrementItem.bind(this);
+    this.decrementItem = this.decrementItem.bind(this);
   }
 
   render() {
     return (
       <div className="wrapper">
-        <Header orders={this.state.orders} deleteOrder={this.deleteOrder} />
+        <Header
+          orders={this.state.orders}
+          deleteOrder={this.deleteOrder}
+          incrementItem={this.incrementItem}
+          decrementItem={this.decrementItem}
+        />
         <Categories chooseCategory={this.chooseCategory} />
         <Items
           onShowItem={this.onShowItem}
@@ -105,6 +118,7 @@ class App extends React.Component {
             item={this.state.fullItem}
             addToOrder={this.addToOrder}
             onShowItem={this.onShowItem}
+            deleteOrder={this.deleteOrder}
           />
         )}
         <Footer />
@@ -135,6 +149,7 @@ class App extends React.Component {
   addToOrder(item) {
     let isInArray = false;
     this.setState({ items: [...this.state.items, item.selected = true] });
+    this.setState({ items: [...this.state.items, item.count = 1] });
     this.state.orders.forEach(el => {
       if (el.id === item.id) {
         isInArray = true;
@@ -148,7 +163,18 @@ class App extends React.Component {
   deleteOrder(item) {
     this.setState({ orders: [...this.state.orders, item.selected = false] });
     this.setState({ orders: this.state.orders.filter(el => el.id !== item.id) });
+    this.setState({ items: [...this.state.orders, item.count = 0] });
+  }
 
+  incrementItem(item) {
+    this.setState({ items: [...this.state.orders, item.count += 1] });
+  }
+
+  decrementItem(item) {
+    if (item.count === 0) {
+      return;
+    }
+    this.setState({ items: [...this.state.orders, item.count -= 1] });
   }
 }
 

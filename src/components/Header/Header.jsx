@@ -6,7 +6,7 @@ import './style.css';
 export const Header = (props) => {
   const [basketActive, setBasketActive] = useState(false);
   let summa = 0;
-  props.orders.forEach(el => summa += Number(el.price));
+  props.orders.forEach(el => summa += Number(el.price * el.count));
 
   return (
     <>
@@ -38,7 +38,13 @@ export const Header = (props) => {
             {props.orders.length
               ? props.orders.map(el => {
                 return (
-                  <Order item={el} key={el.id} deleteOrder={props.deleteOrder} />
+                  <Order
+                    item={el}
+                    key={el.id}
+                    deleteOrder={props.deleteOrder}
+                    incrementItem={props.incrementItem}
+                    decrementItem={props.decrementItem}
+                  />
                 )
               }
               )

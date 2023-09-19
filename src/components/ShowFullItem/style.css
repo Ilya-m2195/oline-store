@@ -67,16 +67,37 @@
   bottom: 20px;
   font-size: 15px;
   font-weight: 700;
-  border: #813c8d;
-  background: #ab46bc;
+  border: 2px solid #813c8d;
+  background: #d823f8;
   border-radius: 5px;
-  padding: 8px 12px;
+  padding: 6px 10px;
   color: #fff;
   cursor: pointer;
   transition: .2s ease;
 }
 
-.fullItem__button:hover {
+.fullItem__button_selected {
+  border: 2px solid #3c8d57;
+  background: #46bc5f;
+  cursor: auto;
+  opacity: 0.5;
+}
+
+.fullItem__button-delete {
+
+  right: 75px;
+
+  border: 2px solid #b90000;
+  background: #f31a1a;
+  transition: .2s ease;
+}
+
+.fullItem__button_add:hover {
   transform: scale(1.1);
-  background: #d823f8;
+  background: #d823f89c;
+}
+
+.fullItem__button-delete:hover {
+  transform: scale(1.1);
+  background: #f31a1a88;
 }

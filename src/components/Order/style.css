@@ -3,6 +3,7 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .order {
@@ -34,7 +35,6 @@
   position: relative;
   width: 35px;
   height: 35px;
-  top: -10px;
   color: red;
   cursor: pointer;
   transition: .2s ease;
@@ -42,4 +42,48 @@
 
 .order__delete-icon:hover {
   transform: scale(1.2);
+}
+
+.order__buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 110px;
+}
+
+.order__counter {
+  display: flex;
+  padding: 0 5px;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(221, 206, 206);
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.counter__button {
+  padding: 0 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.default-cursor {
+  cursor: default;
+}
+
+.counter__button span {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.counter__button:not(:last-child) {
+  margin-right: 10px;
+}
+
+.counter__count {
+  font-weight: 700;
+  margin-right: 10px;
 }
